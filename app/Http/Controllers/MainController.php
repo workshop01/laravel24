@@ -14,7 +14,8 @@ class MainController extends Controller
         $all_products = Product::all();
         $all_categories = Category::all();
 
-        return view('index' , compact('all_products' , 'all_categories'));
+        $last10products = Product::orderBy('created_at' , 'desc')->take(10)->get();
+        return view('index' , compact('all_products' , 'all_categories' , 'last10products'));
     }
 
     public function contact()
@@ -25,7 +26,7 @@ class MainController extends Controller
 
     public function product($id){
         $produit = Product::find($id);
-        
+
         if(!$produit) return redirect()->route('index');
 
         return view ('product' , compact('produit'));
