@@ -416,7 +416,7 @@
                             <div class="single-product">
                                 <div class="product-img">
                                     <a href="product-details.html">
-                                        <img class="default-img" src="https://via.placeholder.com/550x750"
+                                        <img class="default-img" src="{{env('APP_IMAGE')}}{{$p->image}}"
                                             alt="#">
                                         <img class="hover-img" src="https://via.placeholder.com/550x750" alt="#">
                                         @if ($p->hot)

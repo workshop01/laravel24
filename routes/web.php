@@ -24,6 +24,12 @@ Route::get('/' , [MainController::class , 'home'])->name('index');
 Route::get('/contact' , [MainController::class , 'contact'])->name('contact');
 Route::get('/product/{id}' , [MainController::class , 'product'])->name('product');
 
+Route::get('/shop' , [MainController::class, 'shop'])->name('shop');
+Route::get('/shop/{category_id}' , [MainController::class, 'shopByCategory'])->name('shop_category');
+
+Route::post('/filtrer' , [MainController::class , 'filtrer'])->name('filtrer');
+
+
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
