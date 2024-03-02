@@ -1,0 +1,36 @@
+Création d'un nouveau projet
+
+
+composer create-project laravel/laravel example-app
+
+
+Création d'un controller
+php artisan make:controller MainController
+
+création du model avec migration (-m)
+
+php artisan make:model Product -m
+
+//-m pour créer le fichier migration du table product
+
+creation du migration
+
+php artisan make:migration create_products_table
+
+
+update table ( ajouter une colloene sans suppression du table)
+
+php artisan make:migration add_promo_to_products --table=products
+
+
+mise a jour de la base
+php artisan migrate
+
+
+
+Authentification:
+
+composer require laravel/ui
+php artisan ui bootstrap --auth
+
+
