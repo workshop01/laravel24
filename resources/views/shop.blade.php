@@ -56,21 +56,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <form action="{{route('filtrer')}}" method="POST">
+                            <form action="{{ route('filtrer') }}" method="POST">
 
                                 @csrf
                                 <ul class="check-box-list">
                                     <li>
                                         <label class="checkbox-inline" for="1"><input name="price" id="1"
-                                                type="radio" value="20-50"   >  $ 20 - $50<span class="count">(3)</span></label>
+                                                type="radio" value="20-50"> $ 20 - $50<span
+                                                class="count">(3)</span></label>
                                     </li>
                                     <li>
                                         <label class="checkbox-inline" for="2"><input name="price" id="2"
-                                                type="radio" value="50-100">$50 - $100<span class="count">(5)</span></label>
+                                                type="radio" value="50-100">$50 - $100<span
+                                                class="count">(5)</span></label>
                                     </li>
                                     <li>
                                         <label class="checkbox-inline" for="3"><input name="price" id="3"
-                                                type="radio" value="100-250">$100 - $250<span class="count">(8)</span></label>
+                                                type="radio" value="100-250">$100 - $250<span
+                                                class="count">(8)</span></label>
                                     </li>
                                 </ul>
                                 <button class="btn btn-primary">Filter</button>
@@ -211,7 +214,12 @@
                                                         Compare</span></a>
                                             </div>
                                             <div class="product-action-2">
-                                                <a title="Add to cart" href="#">Add to cart</a>
+                                                <form action={{ route('addToCard') }} method="POST">
+                                                    @csrf
+                                                    <input type="hidden" value="{{$produit->id}}" name="id">
+                                                    <button title="Add to cart" type="submit">Add to cart</button>
+
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

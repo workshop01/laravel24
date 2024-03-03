@@ -28,6 +28,12 @@ Route::get('/shop' , [MainController::class, 'shop'])->name('shop');
 Route::get('/shop/{category_id}' , [MainController::class, 'shopByCategory'])->name('shop_category');
 
 Route::post('/filtrer' , [MainController::class , 'filtrer'])->name('filtrer');
+Route::post('/addToCard' , [MainController::class , 'addToCard'])->name('addToCard');
+Route::post('/deleteCard' , [MainController::class , 'deleteCard'])->name('deleteCard');
+
+Route::get('/card' , [MainController::class , 'card'])->name('card');
+
+
 
 
 Auth::routes();
